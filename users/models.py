@@ -7,7 +7,7 @@ from django.contrib.auth.models import (
 from django.db import models
 from django.utils import timezone
 
-from common.models import BaseID
+import uuid
 
 
 class UserManager(BaseUserManager):
@@ -26,7 +26,8 @@ class UserManager(BaseUserManager):
         return self.create_user(email, phone, password, **extra_fields)
 
 
-class User(BaseID, AbstractBaseUser, PermissionsMixin):
+class User(AbstractBaseUser, PermissionsMixin):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=15, unique=True)
     is_active = models.BooleanField(default=True)

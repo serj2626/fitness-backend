@@ -8,7 +8,7 @@ from drf_spectacular.views import (
 )
 
 urlpatterns = [
-    path("ckeditor5/", include("django_ckeditor_5.urls")),
+    # path("ckeditor5/", include("django_ckeditor_5.urls")),
     path("admin/", admin.site.urls),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     path(

@@ -34,6 +34,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # my apps
+    "abonements",
+    "users",
+    "traniners",
+    "payment",
     # "3rd_party",
     "rest_framework",
     "corsheaders",
