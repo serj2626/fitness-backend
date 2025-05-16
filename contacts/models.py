@@ -1,17 +1,7 @@
 from django.db import models
 
-TYPES_CONTACT = [
-    # ТИПЫ КОНТАКТОВ
-    ("phone", "Телефон"),
-    ("mail", "Почта"),
-    ("vk", "Вконтакте"),
-    ("tg", "Телеграм"),
-    ("whatsapp", "Ватсап"),
-    ("address", "Адрес"),
-    ("mode", "Режим работы"),
-    ("latitude", "Широта"),
-    ("longitude", "Долгота"),
-]
+from common.models import BaseDate
+from common.types import CONTACTS_TYPE
 
 
 class Contact(models.Model):
@@ -21,7 +11,7 @@ class Contact(models.Model):
 
     type = models.CharField(
         max_length=50,
-        choices=TYPES_CONTACT,
+        choices=CONTACTS_TYPE,
         default="phone",
         verbose_name="Тип",
     )
@@ -35,7 +25,7 @@ class Contact(models.Model):
         return f"Контакт {self.get_type_display()}"
 
 
-class Feedback(models.Model):
+class Feedback(BaseDate):
     """
     Обратная связь
     """
@@ -43,6 +33,7 @@ class Feedback(models.Model):
     name = models.CharField("Имя", max_length=255)
     phone = models.CharField("Телефон", max_length=255)
     agree = models.BooleanField("Согласие", default=False)
+    read = models.BooleanField("Прочитано", default=False)
 
     class Meta:
         verbose_name = "Обратная связь"

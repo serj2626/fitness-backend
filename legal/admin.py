@@ -1,11 +1,11 @@
 from django.contrib import admin
 
 from common.mixins import SingletonAdminInfoMixin
-from .models import AboutCompany, Offerta, Policy, CookiePolicy
+from .models import About, Offerta, Policy, CookiePolicy
 
 
-@admin.register(AboutCompany)
-class AboutCompanyAdmin(SingletonAdminInfoMixin, admin.ModelAdmin):
+@admin.register(About)
+class AboutAdmin(SingletonAdminInfoMixin, admin.ModelAdmin):
     """
     Админка компании
     """

@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
-
+from common.types import POST_CATEGORY_TYPES
 from common.models import BaseContent, BaseID, BaseTitle, BaseDate
 
 
@@ -69,6 +69,9 @@ class Post(BaseID, BaseTitle, BaseContent, BaseDate):
     Модель поста
     """
 
+    category = models.CharField(
+        "Категория", max_length=100, choices=POST_CATEGORY_TYPES, default="hands"
+    )
     slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
 
     def save(self, *args, **kwargs):

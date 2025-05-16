@@ -1,3 +1,18 @@
 from django.contrib import admin
+from .models import Contact, Feedback
 
-# Register your models here.
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    """Admin View for Contact)"""
+
+    list_display = ("type", "value")
+    search_fields = ("type", "value")
+
+
+@admin.register(Feedback)
+class FeedbackAdmin(admin.ModelAdmin):
+    """Admin View for Feedback)"""
+
+    list_display = ('name', 'phone', 'agree', 'read', )
+    search_fields = ("name", "phone")
