@@ -5,12 +5,13 @@ from django.utils.timesince import timesince
 from django.utils.text import slugify
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils import timezone
+from common.models import BaseContent, BaseID, BaseTitle, BaseDate
 
 
 User = get_user_model()
 
 
-class Trainer(models.Model):
+class Trainer(BaseID):
     """
     Тренер
     """
@@ -21,7 +22,6 @@ class Trainer(models.Model):
         ("yoga", "Инструктор йоги"),
     ]
 
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     position = models.CharField("Должность", max_length=100, choices=POSITIONS)
     first_name = models.CharField("Имя", max_length=100)
     last_name = models.CharField("Фамилия", max_length=100)
@@ -90,7 +90,7 @@ class TrainerRate(models.Model):
         )
 
 
-class TrainingSession(models.Model):
+class TrainingSession(BaseID, BaseDate):
     """
     Забронировать занятие
     """
@@ -129,7 +129,7 @@ class TrainingSession(models.Model):
     #     return f"{self.trainer} — {self.date} {self.time} ({'Занято' if self.is_booked else 'Свободно'})"
 
 
-class Reviews(models.Model):
+class Reviews(BaseID, BaseDate):
     """
     Отзывы
     """
@@ -151,7 +151,6 @@ class Reviews(models.Model):
         related_name="trainer_reviews",
     )
     text = models.TextField("Текст отзыва", max_length=5000, null=True, blank=True)
-    created_at = models.DateTimeField(verbose_name="Создано", default=timezone.now)
 
     class Meta:
         verbose_name = "Отзыв о тренерах"

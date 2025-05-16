@@ -1,4 +1,3 @@
-import uuid
 from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager,
@@ -6,8 +5,7 @@ from django.contrib.auth.models import (
 )
 from django.db import models
 from django.utils import timezone
-
-import uuid
+from common.models import BaseID
 
 
 class UserManager(BaseUserManager):
@@ -26,8 +24,7 @@ class UserManager(BaseUserManager):
         return self.create_user(email, phone, password, **extra_fields)
 
 
-class User(AbstractBaseUser, PermissionsMixin):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class User(BaseID, AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=15, unique=True)
     is_active = models.BooleanField(default=True)
