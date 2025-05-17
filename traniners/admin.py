@@ -29,19 +29,19 @@ class TrainerReviewsAdmin(admin.ModelAdmin):
     get_text.short_description = "Текст"
 
 
-class TrainerImageInline(ImagePreviewMixin, admin.TabularInline):
+class TrainerImageInline(admin.TabularInline):
     model = TrainerImage
     extra = 1
-    fields = ("get_image",)
+    fields = ("image",)
 
-    def get_image(self, obj):
-        if obj.image and hasattr(obj.image, "url"):
-            return mark_safe(
-                f'<img src="{obj.image.url}" style="border-radius: 50%;" width="50" height="50">'
-            )
-        return "Нет изображения"
+    # def get_image(self, obj):
+    #     if obj.image and hasattr(obj.image, "url"):
+    #         return mark_safe(
+    #             f'<img src="{obj.image.url}" style="border-radius: 50%;" width="50" height="50">'
+    #         )
+    #     return "Нет изображения"
 
-    get_image.short_description = "Фото"
+    # get_image.short_description = "Фото"
 
 
 @admin.register(Trainer)
@@ -51,6 +51,7 @@ class TrainerAdmin(admin.ModelAdmin):
     inlines = [TrainerImageInline]
 
     list_display = (
+        "id",
         "position",
         "first_name",
         "last_name",
@@ -58,6 +59,10 @@ class TrainerAdmin(admin.ModelAdmin):
         "phone",
         "get_avatar",
     )
+    list_filter = ("position",)
+    list_per_page = 5
+    save_on_top = True
+    search_fields = ("first_name", "last_name", "email", "phone")
 
     def get_avatar(self, obj):
         if obj.avatar and hasattr(obj.avatar, "url"):
@@ -67,7 +72,6 @@ class TrainerAdmin(admin.ModelAdmin):
         return "Нет изображения"
 
     get_avatar.short_description = "Фото"
-
 
 @admin.register(TrainingSession)
 class TrainingSessionAdmin(admin.ModelAdmin):

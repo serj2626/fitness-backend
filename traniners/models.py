@@ -5,8 +5,8 @@ from common.types import POSITIONS_TYPE
 from datetime import timedelta
 from django.utils.timesince import timesince
 from common.upload import compress_image
-from common.upload_to import upload_to_folder
-from common.validators import validate_image_extension_and_format
+from common.upload_to import dynamic_upload_to
+from common.validators import validate_image_extension_and_format, phone_validator, validate_russian_phone
 
 User = get_user_model()
 
@@ -20,10 +20,12 @@ class Trainer(BaseID, BaseContent):
     first_name = models.CharField("Имя", max_length=100)
     last_name = models.CharField("Фамилия", max_length=100)
     email = models.EmailField("Email", unique=True)
-    phone = models.CharField("Телефон", max_length=12, unique=True)
+    phone = models.CharField(
+        "Телефон", max_length=15, unique=True, validators=[validate_russian_phone]
+    )
     avatar = models.ImageField(
         "Аватар",
-        upload_to=upload_to_folder("trainers/avatars"),
+        upload_to=dynamic_upload_to,
         blank=True,
         null=True,
         validators=[validate_image_extension_and_format],
@@ -52,7 +54,7 @@ class TrainerImage(BaseID, BaseDate):
     )
     image = models.ImageField(
         "Фото",
-        upload_to=upload_to_folder("trainers/images"),
+        upload_to=dynamic_upload_to,
         null=True,
         blank=True,
         validators=[validate_image_extension_and_format],
