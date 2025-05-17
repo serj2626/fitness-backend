@@ -47,8 +47,7 @@ CONTACTS_TYPE = [
 ]
 
 SERVICES_TYPE = [
-    ("gym", "Безлимитные визиты"),
-    ("unlimited_visits", "Безлимитные визиты"),
+    ("gym", "Тренажерный зал"),
     ("pool", "Бассейн"),
     ("yoga", "Йога"),
     ("spa", "SPA"),

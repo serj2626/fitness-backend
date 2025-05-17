@@ -2,16 +2,29 @@ from django.db import models
 from common.models import BaseID, BaseReview, BaseTitle
 from django.utils.text import slugify
 from common.types import SERVICES_TYPE
+from common.upload import compress_image
+from common.upload_to import dynamic_upload_to
+from common.validators import (
+    validate_image_extension_and_format,
+    phone_validator,
+    validate_russian_phone,
+)
 
 
-class Service(BaseID, BaseTitle):
+class Service(BaseID):
     """
     Услуга
     """
 
     type = models.CharField("Тип", max_length=100, choices=SERVICES_TYPE, default="gym")
     slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
-    avatar = models.ImageField("Фото", upload_to="services/", null=True, blank=True)
+    avatar = models.ImageField(
+        "Фото",
+        upload_to=dynamic_upload_to,
+        blank=True,
+        null=True,
+        validators=[validate_image_extension_and_format],
+    )
 
     class Meta:
         verbose_name = "Услуга"
@@ -19,11 +32,13 @@ class Service(BaseID, BaseTitle):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.title)
+            self.slug = slugify(self.type)
+        if self.avatar:
+            self.avatar = compress_image(self.avatar)
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.title
+        return f'Услуга {self.get_type_display()}'
 
 
 class GymReviews(BaseReview):

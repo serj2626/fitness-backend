@@ -17,12 +17,12 @@ class GymReviewsAdmin(admin.ModelAdmin):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ("title", "type", "slug", "get_image")
+    list_display = ("type", "slug", "get_image")
 
     def get_image(self, obj):
         if obj.avatar and hasattr(obj.avatar, "url"):
             return mark_safe(
-                f'<img src="{obj.avatar.url}" style="border-radius: 50%;" width="50" height="50">'
+                f'<img src="{obj.avatar.url}" style="border-radius: 50%;" width="70" height="70">'
             )
         return "Нет изображения"
 
