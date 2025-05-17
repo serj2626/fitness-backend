@@ -2,13 +2,17 @@ import os
 from pathlib import Path
 
 from datetime import timedelta
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "django-insecure-4u8)_thn=s_$2a)t-pc%9nzsz3hx*)gk%#^7e2@y%)&rx_5fz&"
 
+SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = True
+DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = []
 
@@ -45,6 +49,10 @@ INSTALLED_APPS = [
     # "3rd_party",
     "rest_framework",
     "corsheaders",
+    "django_extensions",
+    "django_ckeditor_5",
+    "rest_framework_simplejwt",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -125,3 +133,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+from app.ckeditor5 import *

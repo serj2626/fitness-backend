@@ -17,7 +17,7 @@ class Abonement(models.Model):
     title = models.CharField(
         "Название", max_length=100, choices=ABONEMENT_TYPES, default="basic"
     )
-    description = models.TextField("Описание")
+    description = models.TextField("Описание", null=True, blank=True)
     price = models.PositiveSmallIntegerField("Цена", null=True, blank=True)
     number_of_months = models.SmallIntegerField("Количество месяцев")
     slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
@@ -33,7 +33,7 @@ class Abonement(models.Model):
         ordering = ["price"]
 
     def __str__(self):
-        return f"{self.get_name_display()} - {self.price}₽"
+        return f"{self.get_title_display()} - {self.price}₽"
 
 
 class OrderAbonement(BaseID, BaseDate):

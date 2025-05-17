@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from common.models import BaseContent, BaseID, BaseDate, BaseReview, BaseTitle
 from common.types import POSITIONS_TYPE
 from datetime import timedelta
-
+from django.utils.timesince import timesince
 
 User = get_user_model()
 
@@ -112,15 +112,21 @@ class TrainingSession(BaseID, BaseDate):
             self.end = self.start + timedelta(self.rate.count_minutes)
         super().save(*args, **kwargs)
 
+    @property
+    def time_age(self):
+        return timesince(self.created_at)
+
     class Meta:
         unique_together = (
             "trainer",
             "start",
             "end",
         )  # чтобы один тренер не был дважды на одно время
+        verbose_name = "Забронированное занятие"
+        verbose_name_plural = "Забронированные занятия"
 
-    # def __str__(self):
-    #     return f"{self.trainer} — {self.date} {self.time} ({'Занято' if self.is_booked else 'Свободно'})"
+    def __str__(self):
+        return f"{self.trainer} — {self.start} - {self.end} ({'Занято' if self.is_booked else 'Свободно'})"
 
 
 class TrainerReviews(BaseReview):

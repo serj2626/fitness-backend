@@ -5,7 +5,7 @@ from django.utils.html import mark_safe
 
 @admin.register(GymReviews)
 class GymReviewsAdmin(admin.ModelAdmin):
-    """Admin View for GymReviews)"""
+    """Admin View for GymReviews"""
 
     list_display = ("name", "email", "rating", "get_text")
 
