@@ -21,10 +21,12 @@ class TrainerRateAdmin(admin.ModelAdmin):
 class TrainerReviewsAdmin(admin.ModelAdmin):
     """Admin View for TrainerReviews"""
 
-    list_display = ("trainer", "name", "email", "rating", "get_text")
+    list_display = ("trainer", "name", "email", "rating", "get_text", "verified")
+    list_filter = ("trainer", "rating")
+    search_fields = ("trainer", "rating")
 
     def get_text(self, obj):
-        return f"{(str(obj.txt))[0:26]}..."
+        return f"{(str(obj.text))[0:26]}..."
 
     get_text.short_description = "Текст"
 
@@ -72,6 +74,7 @@ class TrainerAdmin(admin.ModelAdmin):
         return "Нет изображения"
 
     get_avatar.short_description = "Фото"
+
 
 @admin.register(TrainingSession)
 class TrainingSessionAdmin(admin.ModelAdmin):

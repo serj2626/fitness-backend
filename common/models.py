@@ -41,6 +41,7 @@ class BaseReview(BaseID, BaseDate):
         "Рейтинг", default=5, validators=[MinValueValidator(1), MaxValueValidator(5)]
     )
     text = models.TextField("Текст отзыва", max_length=5000, null=True, blank=True)
+    verified = models.BooleanField("Проверен", default=False)
 
     @property
     def time_age(self):

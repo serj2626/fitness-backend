@@ -6,7 +6,11 @@ from datetime import timedelta
 from django.utils.timesince import timesince
 from common.upload import compress_image
 from common.upload_to import dynamic_upload_to
-from common.validators import validate_image_extension_and_format, phone_validator, validate_russian_phone
+from common.validators import (
+    validate_image_extension_and_format,
+    phone_validator,
+    validate_russian_phone,
+)
 
 User = get_user_model()
 
@@ -164,7 +168,7 @@ class TrainerReviews(BaseReview):
         ordering = ["-created_at"]
 
     def __str__(self):
-        return f"Отзыв от {self.user.email}" if self.user else "Anonymous"
+        return f"Отзыв от {self.name}"
 
     # @property
     # def time_age(self):

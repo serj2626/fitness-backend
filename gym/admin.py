@@ -7,7 +7,7 @@ from django.utils.html import mark_safe
 class GymReviewsAdmin(admin.ModelAdmin):
     """Admin View for GymReviews"""
 
-    list_display = ("name", "email", "rating", "get_text")
+    list_display = ("name", "email", "rating", "get_text", "verified")
 
     def get_text(self, obj):
         return f"{(str(obj.txt))[0:26]}..."
