@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     # my apps
     "abonements",
     "users",
-    "traniners",
+    "trainers",
     "payment",
     "gym",
     "legal",

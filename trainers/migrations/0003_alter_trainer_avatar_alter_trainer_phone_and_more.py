@@ -10,7 +10,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("traniners", "0002_alter_trainingsession_options"),
+        ("trainers", "0002_alter_trainingsession_options"),
     ]
 
     operations = [

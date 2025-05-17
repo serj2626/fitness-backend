@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class TraninersConfig(AppConfig):
+class TrainersConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'traniners'
+    name = 'trainers'
     verbose_name = 'Тренеры'

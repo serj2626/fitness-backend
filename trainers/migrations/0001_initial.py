@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')),
                 ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Дата обновления')),
                 ('image', models.ImageField(blank=True, null=True, upload_to='trainers/images/', verbose_name='Фото')),
-                ('trainer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to='traniners.trainer', verbose_name='тренер')),
+                ('trainer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to='trainers.trainer', verbose_name='тренер')),
             ],
             options={
                 'verbose_name': 'Фото тренера',
@@ -56,7 +56,7 @@ class Migration(migrations.Migration):
                 ('count_minutes', models.SmallIntegerField(blank=True, null=True, verbose_name='Количество минут')),
                 ('price', models.SmallIntegerField(default=1000, verbose_name='Цена')),
                 ('description', models.TextField(blank=True, verbose_name='Описание тарифа')),
-                ('trainer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='rates', to='traniners.trainer', verbose_name='тренер')),
+                ('trainer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='rates', to='trainers.trainer', verbose_name='тренер')),
             ],
             options={
                 'verbose_name': 'Тариф тренера',
@@ -74,7 +74,7 @@ class Migration(migrations.Migration):
                 ('email', models.EmailField(blank=True, max_length=254, null=True, verbose_name='Email')),
                 ('rating', models.SmallIntegerField(default=5, validators=[django.core.validators.MinValueValidator(1), django.core.validators.MaxValueValidator(5)], verbose_name='Рейтинг')),
                 ('text', models.TextField(blank=True, max_length=5000, null=True, verbose_name='Текст отзыва')),
-                ('trainer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='trainer_reviews', to='traniners.trainer', verbose_name='тренер')),
+                ('trainer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='trainer_reviews', to='trainers.trainer', verbose_name='тренер')),
             ],
             options={
                 'verbose_name': 'Отзыв о тренерах',
@@ -92,8 +92,8 @@ class Migration(migrations.Migration):
                 ('end', models.DateTimeField(blank=True, null=True, verbose_name='Конец')),
                 ('is_booked', models.BooleanField(default=False, verbose_name='Занято')),
                 ('client', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='trainings', to=settings.AUTH_USER_MODEL)),
-                ('rate', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='trainings', to='traniners.trainerrate', verbose_name='Тариф')),
-                ('trainer', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='trainings', to='traniners.trainer', verbose_name='Тренер')),
+                ('rate', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='trainings', to='trainers.trainerrate', verbose_name='Тариф')),
+                ('trainer', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='trainings', to='trainers.trainer', verbose_name='Тренер')),
             ],
             options={
                 'unique_together': {('trainer', 'start', 'end')},
