@@ -4,6 +4,9 @@ from common.models import BaseContent, BaseID, BaseDate, BaseReview, BaseTitle
 from common.types import POSITIONS_TYPE
 from datetime import timedelta
 from django.utils.timesince import timesince
+from django.core.validators import FileExtensionValidator
+from common.upload import compress_image
+from common.validators import validate_image_format
 
 User = get_user_model()
 
@@ -23,6 +26,7 @@ class Trainer(BaseID, BaseContent):
         upload_to="trainers/",
         blank=True,
         null=True,
+        validators=[validate_image_format],
     )
 
     class Meta:
@@ -31,6 +35,11 @@ class Trainer(BaseID, BaseContent):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} - {self.get_position_display()}"
+
+    def save(self, *args, **kwargs):
+        if self.avatar:
+            self.avatar = compress_image(self.avatar)
+        super().save(*args, **kwargs)
 
 
 class TrainerImage(BaseID, BaseDate):
