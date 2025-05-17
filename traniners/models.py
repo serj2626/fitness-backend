@@ -4,9 +4,9 @@ from common.models import BaseContent, BaseID, BaseDate, BaseReview, BaseTitle
 from common.types import POSITIONS_TYPE
 from datetime import timedelta
 from django.utils.timesince import timesince
-from django.core.validators import FileExtensionValidator
 from common.upload import compress_image
-from common.validators import validate_image_format
+from common.upload_to import upload_to_folder
+from common.validators import validate_image_extension_and_format
 
 User = get_user_model()
 
@@ -23,10 +23,10 @@ class Trainer(BaseID, BaseContent):
     phone = models.CharField("Телефон", max_length=12, unique=True)
     avatar = models.ImageField(
         "Аватар",
-        upload_to="trainers/",
+        upload_to=upload_to_folder("trainers/avatars"),
         blank=True,
         null=True,
-        validators=[validate_image_format],
+        validators=[validate_image_extension_and_format],
     )
 
     class Meta:
@@ -52,10 +52,16 @@ class TrainerImage(BaseID, BaseDate):
     )
     image = models.ImageField(
         "Фото",
-        upload_to="trainers/images/",
+        upload_to=upload_to_folder("trainers/images"),
         null=True,
         blank=True,
+        validators=[validate_image_extension_and_format],
     )
+
+    def save(self, *args, **kwargs):
+        if self.image:
+            self.image = compress_image(self.image)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"Фото {self.trainer}"
