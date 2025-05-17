@@ -1,0 +1,35 @@
+[
+{
+  "model": "abonements.abonement",
+  "pk": 3,
+  "fields": {
+    "title": "basic",
+    "description": "",
+    "price": 12,
+    "number_of_months": 12,
+    "slug": "basic"
+  }
+},
+{
+  "model": "abonements.abonement",
+  "pk": 4,
+  "fields": {
+    "title": "vip",
+    "description": "",
+    "price": 12,
+    "number_of_months": 12,
+    "slug": "vip"
+  }
+},
+{
+  "model": "abonements.abonement",
+  "pk": 5,
+  "fields": {
+    "title": "premium",
+    "description": "",
+    "price": 15,
+    "number_of_months": 15,
+    "slug": "premium"
+  }
+}
+]

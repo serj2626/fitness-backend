@@ -1,0 +1,18 @@
+[
+{
+  "model": "users.user",
+  "pk": "61305757-80b8-48bb-abad-9a7e9cfd1ea2",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$LbIqukoXOEMWnSgs2pAVN5$cZP9hcOVUfigjHoc9z8GQChwQ0O0m9F56QM93RFxy4Y=",
+    "last_login": "2025-05-16T22:43:53.468Z",
+    "is_superuser": true,
+    "email": "admin@mail.ru",
+    "phone": "45898798569",
+    "is_active": true,
+    "is_staff": true,
+    "date_joined": "2025-05-16T22:42:25.638Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

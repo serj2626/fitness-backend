@@ -1,0 +1,249 @@
+[
+{
+  "model": "trainers.trainer",
+  "pk": "164ef414-bace-4d3f-84d2-c1be5193a3d2",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "yoga",
+    "first_name": "Лейла",
+    "last_name": "Адамова",
+    "email": "ada@mail.ru",
+    "phone": "+79531605389",
+    "avatar": "uploads/trainer/2025/05/35250a08fcd442bfb8a08593b7c5e628.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "1eb3c6c6-1da5-4656-9788-102737fd015e",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Ольга",
+    "last_name": "Зайцева",
+    "email": "zaqq@mail.ru",
+    "phone": "+74111254231",
+    "avatar": "uploads/trainer/2025/05/ce142a9c46cb48c6b6308dda0eb69f08.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "29d8883f-c446-4788-aaf1-3f44855465b1",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "pool",
+    "first_name": "Галина",
+    "last_name": "Петрова",
+    "email": "asdsadsadasdads@mail.ru",
+    "phone": "89112147444",
+    "avatar": "uploads/trainer/2025/05/71d16d383e2d4835aa6fbe33f45733b6.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "4b63301f-0a5b-4abd-8706-56185c43abf4",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Александра",
+    "last_name": "Пирогова",
+    "email": "a@mail.ru",
+    "phone": "89214568523",
+    "avatar": "uploads/trainer/2025/05/440cbc44eb79420e873a4164f4f82052.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "50e2fb78-2d03-459a-afb9-c3bee53b6ed1",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Ирина",
+    "last_name": "Ракова",
+    "email": "rak@mail.ru",
+    "phone": "89225554477",
+    "avatar": "uploads/trainer/2025/05/5167685e0a3b4fc89614f86327d77ffb.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "54b2121d-73b4-4f6d-9fce-094e56e6d275",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "yoga",
+    "first_name": "Виктория",
+    "last_name": "Арышева",
+    "email": "vaasdar@mail.ru",
+    "phone": "89535478562",
+    "avatar": "uploads/trainer/2025/05/403edadfed9f4012bb83c17d8a6ff3e0.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "5ec703eb-25a3-4055-9f08-deaf0f1a3030",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Анастасия",
+    "last_name": "Игорова",
+    "email": "e@mail.ru",
+    "phone": "89111232541",
+    "avatar": "uploads/trainer/2025/05/6a4114800ab248e2a9a62dd7a9267b8d.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "629f1026-a032-478f-9eb8-f15262b00890",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Надежда",
+    "last_name": "Кирова",
+    "email": "n@mail.ru",
+    "phone": "+78124569874",
+    "avatar": "uploads/trainer/2025/05/f40a08f266c24cefbd570309f0798d85.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "70e69b42-24e6-43ea-b313-46202279fe73",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Виктория",
+    "last_name": "Арышева",
+    "email": "ar@mail.ru",
+    "phone": "89114528273",
+    "avatar": "uploads/trainer/2025/05/ead85cf2423d4615b2517eb98222b453.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "760ed862-6adf-41fa-a6b7-9c7ffc9bec94",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Александра",
+    "last_name": "Карпова",
+    "email": "kasdsadas@mail.ru",
+    "phone": "+78889996633",
+    "avatar": "uploads/trainer/2025/05/06e36256d9094151924d68ccc25054ae.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "82a65183-913b-41b0-af10-8b01b4f58579",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "pool",
+    "first_name": "Ольга",
+    "last_name": "Петрова",
+    "email": "ol@mail.ru",
+    "phone": "89561457854",
+    "avatar": "uploads/trainer/2025/05/1e3d54554939474b840eff52fa60dabf.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "85e8d180-3d34-4878-ba60-ef105282e111",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Елизавета",
+    "last_name": "Тихонова",
+    "email": "lisat@mail.ru",
+    "phone": "89118122376",
+    "avatar": "uploads/trainer/2025/05/4dd107922a0448ac9ca124f9e8a923ce.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "8e4cccb0-4cf8-43b5-a995-39fa32b9b5dc",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Марина",
+    "last_name": "Богданова",
+    "email": "asdsadsadfsad@mail.ru",
+    "phone": "89224447755",
+    "avatar": "uploads/trainer/2025/05/49942369beed411f8b002147aaa848e9.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "90fb2abd-58ea-4c9e-b74e-3b29afeb9333",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Ирина",
+    "last_name": "Демидова",
+    "email": "irinad@mail.ru",
+    "phone": "89235147229",
+    "avatar": "uploads/trainer/2025/05/16b86ad93144469fad48309efc6f1e81.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "ae50bb75-7888-491d-94de-5a67772f5a17",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "pool",
+    "first_name": "Галина",
+    "last_name": "Сухова",
+    "email": "fa@mail.ru",
+    "phone": "+79522322456",
+    "avatar": "uploads/trainer/2025/05/3c799057f52945d29c8efe1a887ec7d6.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "ae824706-56d8-4cea-81a8-15a0e6b6cf23",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Александра",
+    "last_name": "Граммова",
+    "email": "gr@mail.ru",
+    "phone": "89112221144",
+    "avatar": "uploads/trainer/2025/05/1905fc68db7c40f28dfa2c84383b98ff.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "c7e954bd-5f8e-4079-8bb7-f97b64ac3520",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Надежда",
+    "last_name": "Кирова",
+    "email": "nasdaddkir@mail.ru",
+    "phone": "+79235122317",
+    "avatar": "uploads/trainer/2025/05/a4075c174d6d409db7b83c1d9392f6bd.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "efecf502-d3fc-4fd2-8031-8326e87f37f7",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "fitness",
+    "first_name": "Карина",
+    "last_name": "Вирова",
+    "email": "karina@mail.ru",
+    "phone": "89114442299",
+    "avatar": "uploads/trainer/2025/05/b9e3aab963f241008c204ed51ed01c9c.webp"
+  }
+},
+{
+  "model": "trainers.trainer",
+  "pk": "f18d0147-108c-4c31-930c-ec8c370dd34d",
+  "fields": {
+    "content": "<p>&nbsp;</p>",
+    "position": "yoga",
+    "first_name": "Лейла",
+    "last_name": "Камова",
+    "email": "kaaaasas@mail.ru",
+    "phone": "89115555566",
+    "avatar": "uploads/trainer/2025/05/49c6a6d7f3f845bf8ee96babe3c949d8.webp"
+  }
+}
+]
