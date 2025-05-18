@@ -33,7 +33,7 @@ class Feedback(BaseDate):
     name = models.CharField("Имя", max_length=255)
     phone = models.CharField("Телефон", max_length=255)
     agree = models.BooleanField("Согласие", default=False)
-    read = models.BooleanField("Прочитано", default=False)
+    verified = models.BooleanField("Проверен", default=False)
 
     class Meta:
         verbose_name = "Обратная связь"

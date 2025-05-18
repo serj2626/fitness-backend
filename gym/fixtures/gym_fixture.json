@@ -1,0 +1,74 @@
+[
+{
+  "model": "gym.service",
+  "pk": "22b3c7f7-2db1-4782-bf55-789a87cf26bc",
+  "fields": {
+    "type": "cosmetology",
+    "slug": "cosmetology",
+    "avatar": "uploads/service/2025/05/50deacc682514ef387c5cc052517dd7b.webp"
+  }
+},
+{
+  "model": "gym.service",
+  "pk": "353c88e8-d005-41fe-818c-c29d72b67921",
+  "fields": {
+    "type": "pool",
+    "slug": "pool",
+    "avatar": "uploads/service/2025/05/5c6df3a9f9074335affe6f1db10128c4.webp"
+  }
+},
+{
+  "model": "gym.service",
+  "pk": "42f16cd7-0f24-4497-bb35-425bcf8abe14",
+  "fields": {
+    "type": "gym",
+    "slug": "gym",
+    "avatar": "uploads/service/2025/05/b7b1d67c06374f4ea1ef292ec5104a97.webp"
+  }
+},
+{
+  "model": "gym.service",
+  "pk": "af0d95a0-1665-496c-b7a3-18224a3caaf9",
+  "fields": {
+    "type": "cycle",
+    "slug": "cycle",
+    "avatar": "uploads/service/2025/05/6732ec054fe9465e990bf298de3566b9.webp"
+  }
+},
+{
+  "model": "gym.service",
+  "pk": "afd4b1a5-8405-45d4-8d0b-09d4d898376f",
+  "fields": {
+    "type": "water aerobics",
+    "slug": "water-aerobics",
+    "avatar": "uploads/service/2025/05/a6fa520d3207453b884e5d9cfd8e09f9.webp"
+  }
+},
+{
+  "model": "gym.service",
+  "pk": "b761dcbc-8463-4947-b5cf-d25b8244368f",
+  "fields": {
+    "type": "yoga",
+    "slug": "yoga",
+    "avatar": "uploads/service/2025/05/68c57dd29d7e4af987114c820812a2ce.webp"
+  }
+},
+{
+  "model": "gym.service",
+  "pk": "e958a7bb-31bd-4713-807e-b981b59e7b67",
+  "fields": {
+    "type": "dancing",
+    "slug": "dancing",
+    "avatar": "uploads/service/2025/05/58a38f5ebe6d4c15b0864d9e0fe53f34.webp"
+  }
+},
+{
+  "model": "gym.service",
+  "pk": "f77fcf50-750a-4ac1-aa79-117247a9bded",
+  "fields": {
+    "type": "spa",
+    "slug": "spa",
+    "avatar": "uploads/service/2025/05/346b21a0d5424c878b30dc137dead4a0.webp"
+  }
+}
+]

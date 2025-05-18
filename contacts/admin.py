@@ -14,5 +14,5 @@ class ContactAdmin(admin.ModelAdmin):
 class FeedbackAdmin(admin.ModelAdmin):
     """Admin View for Feedback)"""
 
-    list_display = ('name', 'phone', 'agree', 'read', )
+    list_display = ('name', 'phone', 'agree', 'verified', )
     search_fields = ("name", "phone")

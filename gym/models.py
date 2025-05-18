@@ -1,13 +1,11 @@
 from django.db import models
-from common.models import BaseID, BaseReview, BaseTitle
+from common.models import BaseID, BaseReview
 from django.utils.text import slugify
 from common.types import SERVICES_TYPE
 from common.upload import compress_image
 from common.upload_to import dynamic_upload_to
 from common.validators import (
     validate_image_extension_and_format,
-    phone_validator,
-    validate_russian_phone,
 )
 
 

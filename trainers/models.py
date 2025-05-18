@@ -10,6 +10,7 @@ from common.validators import (
     validate_image_extension_and_format,
     validate_russian_phone,
 )
+from gym.models import Service
 
 User = get_user_model()
 
@@ -97,6 +98,32 @@ class TrainerRate(BaseTitle):
         return (
             f"Индивидуальное занятие на {self.count_minutes} минут - тариф {self.title}"
         )
+
+
+# class TrainerService(models.Model):
+#     """
+#     Услуги тренера
+#     """
+
+#     trainer = models.ForeignKey(
+#         Trainer,
+#         on_delete=models.CASCADE,
+#         related_name="services",
+#         verbose_name="тренер",
+#     )
+#     service = models.ForeignKey(
+#         Service,
+#         on_delete=models.CASCADE,
+#         related_name="trainers",
+#         verbose_name="услуга",
+#     )
+
+#     class Meta:
+#         verbose_name = "Услуга тренера"
+#         verbose_name_plural = "Услуги тренеров"
+
+#     def __str__(self):
+#         return f"{self.trainer} - {self.service}"
 
 
 class TrainingSession(BaseID, BaseDate):

@@ -1,12 +1,13 @@
 from django.contrib import admin
 
-from common.mixins import AdminShortDescriptionMixin
+from common.mixins import AdminLimitMixin, AdminShortDescriptionMixin
 from .models import Abonement, OrderAbonement, GymVisit
 
 
 @admin.register(Abonement)
-class AbonementAdmin(AdminShortDescriptionMixin, admin.ModelAdmin):
+class AbonementAdmin(AdminShortDescriptionMixin, AdminLimitMixin, admin.ModelAdmin):
     """Admin View for Abonement"""
+    singleton_limit = 3
 
     list_display = (
         "title",
